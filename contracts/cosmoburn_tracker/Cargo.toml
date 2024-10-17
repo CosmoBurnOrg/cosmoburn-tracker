@@ -1,0 +1,23 @@
+[package]
+name = "cosmoburn_tracker"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+library = []
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+
+[dependencies]
+cosmwasm-std = { workspace = true, features = ["staking", "stargate"] }
+serde-json-wasm = { workspace = true }
+cw-storage-plus = { workspace = true, features = ["iterator"]}
+cosmwasm-schema = { workspace = true }
+cw2 = { workspace = true }
+schemars = { workspace = true }
+serde = { workspace = true }
+thiserror = "1"
+astroport = { git = "https://github.com/astroport-fi/astroport-core", version = "4" }
+cw-paginate = { path = "../../packages/cw-paginate", default-features = false }
